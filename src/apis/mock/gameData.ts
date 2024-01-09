@@ -1,3 +1,4 @@
+import { Game } from '@/views/main/game-list'
 export const gameList = [
   {
     id: 1,

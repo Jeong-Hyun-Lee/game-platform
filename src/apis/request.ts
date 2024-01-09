@@ -4,6 +4,7 @@ import axios, {
   AxiosResponse,
   AxiosError,
 } from 'axios'
+import AxiosMockAdapter from './mock'
 // interface APIResponse<T> {
 //   statusCode: number // 상태코드 (보인 서버상태코드)
 //   errorCode: number // 에러코드 (본인 서버에러코드)
@@ -120,3 +121,5 @@ export const deleteData = async <T>(
     throw new Error(error?.message)
   }
 }
+
+AxiosMockAdapter(axiosInstance)

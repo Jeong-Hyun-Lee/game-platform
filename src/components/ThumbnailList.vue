@@ -36,9 +36,6 @@ export default Vue.extend({
     Thumbnail,
   },
   props: ['list'],
-  mounted() {
-    console.log('list >>> ', this.list)
-  },
 })
 </script>
 <style lang="scss">
