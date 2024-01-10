@@ -7,30 +7,12 @@
     :height="height"
     :ripple="true"
   >
-    <v-img
-      :src="imageUrl"
-      transition="fade-transition"
-      class="align-end"
+    <lazy-image
+      :imageUrl="imageUrl"
+      :layout="'align-end'"
       cover
-      width="100%"
-      height="100%"
-      gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+      :gradient="`to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)`"
     >
-      <template v-slot:placeholder>
-        <v-row class="fill-height ma-0" :align="'center'" justify="center">
-          <v-progress-circular
-            v-if="useProgress"
-            indeterminate
-            color="grey lighten-5"
-          ></v-progress-circular>
-          <v-skeleton-loader
-            v-else
-            type="image"
-            width="100%"
-            height="100%"
-          ></v-skeleton-loader>
-        </v-row>
-      </template>
       <v-card-title
         v-if="title"
         class="white--text"
@@ -38,17 +20,21 @@
           fontSize: '1.75rem',
         }"
       >
-        {{ title }}</v-card-title
-      >
-    </v-img>
+        {{ title }}
+      </v-card-title>
+    </lazy-image>
   </v-card>
 </template>
 
 <script lang="ts">
+import LazyImage from '@/components/LazyImage.vue'
 import Vue from 'vue'
 
 export default Vue.extend({
   name: 'ThumbnailComponent',
+  components: {
+    LazyImage,
+  },
   props: {
     title: String,
     imageUrl: {

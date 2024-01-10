@@ -14,23 +14,25 @@
         {{ getData.title }}
       </v-toolbar-title>
     </v-app-bar>
-    <v-container class="detail-container">
-      <v-container :style="{ overflow: 'auto', flex: 3 }">
-        <sync-thumbnail-list :list="getData.images" />
-      </v-container>
-      <v-container class="info-container"
-        >{{ getData.description }}
-        <v-btn
-          class="light-blue darken-4 play-btn rounded-xl"
-          :align="'center'"
-          justify="center"
-          width="100%"
-          height="80px"
-          :ripple="true"
-        >
-          {{ $t('detail.play') }}
-        </v-btn>
-      </v-container>
+    <v-container class="white--text">
+      <v-row>
+        <v-col :style="{ overflow: 'auto' }" cols="8">
+          <sync-thumbnail-list :list="getData.images" />
+        </v-col>
+        <v-col cols="4" class="info-container"
+          >{{ getData.description }}
+          <v-btn
+            class="light-blue darken-4 play-btn rounded-xl"
+            :align="'center'"
+            justify="center"
+            width="100%"
+            height="80px"
+            :ripple="true"
+          >
+            {{ $t('detail.play') }}
+          </v-btn>
+        </v-col>
+      </v-row>
     </v-container>
   </fragment>
 </template>
@@ -50,7 +52,7 @@ export default Vue.extend({
     ...mapGetters({
       getList: 'gameStore/getList',
     }),
-    getData() {
+    getData(): IGame {
       // 값만 비교하려고 == 사용
       return (
         this.getList.find((item: IGame) => item.id == this.$route.params.id) ||
@@ -68,13 +70,14 @@ export default Vue.extend({
   gap: 60px;
 }
 .info-container {
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  line-height: 2;
 }
 .play-btn {
   color: white;
   font-size: 1.5rem;
+  font-weight: bold;
 }
 </style>

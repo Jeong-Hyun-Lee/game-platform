@@ -3,7 +3,7 @@
     <v-sheet v-if="list.length > 0" class="black">
       <flicking
         ref="mainThumbnail"
-        :options="{ bounce: 30 }"
+        :options="{ bounce: 30, moveType: ['strict'] }"
         :plugins="plugins"
       >
         <div
@@ -15,12 +15,11 @@
             height: '500px',
           }"
         >
-          <v-img
+          <lazy-image
+            :imageUrl="url"
             class="panel-image black"
-            :src="url"
-            width="100%"
-            height="100%"
             contain
+            useProgress
           />
         </div>
       </flicking>
@@ -37,12 +36,11 @@
             height: '140px',
           }"
         >
-          <v-img
+          <lazy-image
+            :imageUrl="url"
             class="panel-image black"
-            :src="url"
-            width="100%"
-            height="100%"
             contain
+            useProgress
           />
         </div>
       </flicking>
@@ -51,13 +49,16 @@
   </fragment>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue'
 import { Sync } from '@egjs/flicking-plugins'
-import type { Plugin } from '@egjs/flicking'
+import LazyImage from '@/components/LazyImage.vue'
 
 export default Vue.extend({
   name: 'SyncThumbnailList',
+  components: {
+    LazyImage,
+  },
   props: {
     list: {
       type: Array,
@@ -67,7 +68,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      plugins: [] as any,
+      plugins: [],
     }
   },
   mounted() {
