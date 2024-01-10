@@ -15,13 +15,21 @@ const routes: Array<RouteConfig> = [
     name: 'detail',
     props: true,
     component: () =>
-      import(/* webpackChunkName: "about" */ '../views/detail/DetailView.vue'),
+      import(/* webpackChunkName: "detail" */ '../views/detail/DetailView.vue'),
   },
   {
     path: '/terms',
     name: 'terms',
     component: () =>
-      import(/* webpackChunkName: "about" */ '../views/terms/TermsView.vue'),
+      import(/* webpackChunkName: "terms" */ '../views/terms/TermsView.vue'),
+  },
+  {
+    path: '/info',
+    name: 'service-info',
+    component: () =>
+      import(
+        /* webpackChunkName: "serviceInfo" */ '../views/services/ServiceInfoView.vue'
+      ),
   },
 ]
 
