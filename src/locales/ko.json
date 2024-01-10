@@ -5,5 +5,8 @@
     "service_terms": "서비스 약관",
     "personal_terms": "개인정보 수집 약관",
     "announcement": "공지사항"
+  },
+  "detail": {
+    "play": "게임 실행하기"
   }
 }

@@ -14,7 +14,7 @@
     >
       <!-- https://codepen.io/egjs/pen/vqYjrr -->
       <v-card
-        v-for="(item, index) in imageList"
+        v-for="(item, index) in list"
         :key="`card-${index}`"
         class="panel mr-5 rounded-xl"
         elevation="5"
@@ -23,7 +23,7 @@
         :ripple="true"
       >
         <v-img
-          :src="item.href"
+          :src="item.images[0]"
           transition="fade-transition"
           class="align-end"
           cover
@@ -38,7 +38,7 @@
               ></v-progress-circular>
             </v-row>
           </template>
-          <v-card-title v-text="item.title" class="white--text"></v-card-title>
+          <v-card-title class="white--text">{{ item.title }}</v-card-title>
         </v-img>
       </v-card>
     </flicking>
@@ -57,42 +57,9 @@ export default Vue.extend({
   components: {
     Flicking: Flicking,
   },
+  props: ['list'],
   data: () => ({
     parallax,
-    imageList: [
-      {
-        title: '벽돌깨기',
-        href: 'https://naver.github.io/egjs-infinitegrid/assets/image/21.jpg',
-      },
-      {
-        title: '타워디펜스',
-        href: 'https://naver.github.io/egjs-infinitegrid/assets/image/22.jpg',
-      },
-      {
-        title: '오버워치',
-        href: 'https://naver.github.io/egjs-infinitegrid/assets/image/23.jpg',
-      },
-      {
-        title: '로스트아크',
-        href: 'https://naver.github.io/egjs-infinitegrid/assets/image/24.jpg',
-      },
-      {
-        title: '벽돌깨기',
-        href: 'https://naver.github.io/egjs-infinitegrid/assets/image/25.jpg',
-      },
-      {
-        title: '타워디펜스',
-        href: 'https://naver.github.io/egjs-infinitegrid/assets/image/26.jpg',
-      },
-      {
-        title: '오버워치',
-        href: 'https://naver.github.io/egjs-infinitegrid/assets/image/27.jpg',
-      },
-      {
-        title: '로스트아크',
-        href: 'https://naver.github.io/egjs-infinitegrid/assets/image/28.jpg',
-      },
-    ],
   }),
 })
 </script>

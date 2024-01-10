@@ -17,7 +17,7 @@
       gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
     >
       <template v-slot:placeholder>
-        <v-row class="fill-height ma-0" align="center" justify="center">
+        <v-row class="fill-height ma-0" :align="'center'" justify="center">
           <v-progress-circular
             v-if="useProgress"
             indeterminate
@@ -31,7 +31,15 @@
           ></v-skeleton-loader>
         </v-row>
       </template>
-      <v-card-title v-if="title" class="white--text"> {{ title }}</v-card-title>
+      <v-card-title
+        v-if="title"
+        class="white--text"
+        :style="{
+          fontSize: '1.75rem',
+        }"
+      >
+        {{ title }}</v-card-title
+      >
     </v-img>
   </v-card>
 </template>
@@ -49,11 +57,11 @@ export default Vue.extend({
     },
     width: {
       type: [Number, String],
-      default: 300,
+      default: 400,
     },
     height: {
       type: [Number, String],
-      default: 500,
+      default: 700,
     },
     isLast: Boolean,
     useProgress: { type: Boolean, default: false },

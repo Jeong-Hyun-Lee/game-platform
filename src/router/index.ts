@@ -13,6 +13,7 @@ const routes: Array<RouteConfig> = [
   {
     path: '/detail/:id',
     name: 'detail',
+    props: true,
     component: () =>
       import(/* webpackChunkName: "about" */ '../views/detail/DetailView.vue'),
   },

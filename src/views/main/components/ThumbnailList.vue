@@ -14,20 +14,18 @@
       <Thumbnail
         v-for="(item, index) in list"
         :key="`card-${index}`"
-        :imageUrl="item.images[0]"
+        :imageUrl="item.thumbnail"
         :title="item.title"
+        @click.native="onClickHandler(item)"
       />
     </flicking>
   </v-container>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue'
 import { Flicking } from '@egjs/vue-flicking'
-import { Parallax } from '@egjs/flicking-plugins'
 import Thumbnail from './Thumbnail.vue'
-
-const parallax = new Parallax('.v-image__image', 1)
 
 export default Vue.extend({
   name: 'ThumbnailList',
@@ -36,15 +34,16 @@ export default Vue.extend({
     Thumbnail,
   },
   props: ['list'],
+  methods: {
+    onClickHandler(item) {
+      this.$router.push({
+        path: `/detail/${item?.id}`,
+      })
+    },
+  },
 })
 </script>
 <style lang="scss">
-.thumbnail-list {
-  height: 600px;
-  overflow: auto;
-  padding: 10px;
-}
-
 .panel .v-image {
   position: relative;
   width: 100%;

@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-main class="blue-grey darken-3">
+    <v-main class="grey darken-4">
       <router-view />
     </v-main>
   </v-app>
@@ -11,9 +11,6 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'App',
-
-  data: () => ({
-    //
-  }),
 })
 </script>
+<style scoped></style>

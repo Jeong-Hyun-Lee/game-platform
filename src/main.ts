@@ -12,6 +12,8 @@ import Flicking from '@egjs/vue-flicking'
 import '@egjs/vue-flicking/dist/flicking.css'
 import '@egjs/vue-flicking/dist/flicking-inline.css'
 
+import '@egjs/flicking-plugins/dist/flicking-plugins.css'
+
 Vue.use(Flicking)
 Vue.use(Fragment.Plugin)
 
