@@ -66,7 +66,6 @@ export default Vue.extend({
     isLast: Boolean,
     useProgress: { type: Boolean, default: false },
   },
-  data: () => ({}),
 })
 </script>
 <style lang="scss">

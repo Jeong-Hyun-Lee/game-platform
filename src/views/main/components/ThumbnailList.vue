@@ -22,10 +22,11 @@
   </v-container>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from 'vue'
 import { Flicking } from '@egjs/vue-flicking'
 import Thumbnail from './Thumbnail.vue'
+import { IGame } from '@/interfaces'
 
 export default Vue.extend({
   name: 'ThumbnailList',
@@ -35,7 +36,7 @@ export default Vue.extend({
   },
   props: ['list'],
   methods: {
-    onClickHandler(item) {
+    onClickHandler(item: IGame) {
       this.$router.push({
         path: `/detail/${item?.id}`,
       })
@@ -50,3 +51,4 @@ export default Vue.extend({
   height: 100%;
 }
 </style>
+@/interfaces

@@ -21,7 +21,7 @@
     <v-container>
       <div
         v-if="getList.length === 0"
-        align="center"
+        :align="'center'"
         justify="center"
         class="white--text ma-10"
       >
@@ -37,7 +37,6 @@ import Vue from 'vue'
 import ThumbnailList from './components/ThumbnailList.vue'
 import MenuList from './components/MenuList.vue'
 import { getData } from '@/apis/request'
-// import { IGame } from './game-list'
 import { mapMutations, mapGetters } from 'vuex'
 
 export default Vue.extend({
@@ -52,11 +51,6 @@ export default Vue.extend({
       this.setList(list)
     } catch (e) {
       console.log(e)
-    }
-  },
-  data() {
-    return {
-      // gameList: [] as Array<IGame>,
     }
   },
   computed: {

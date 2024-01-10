@@ -18,7 +18,7 @@
 //   },
 // }
 
-import { IGame } from '@/views/main/game-list'
+import { IGame } from '@/interfaces'
 import { Module } from 'vuex'
 import { RootState } from './index'
 

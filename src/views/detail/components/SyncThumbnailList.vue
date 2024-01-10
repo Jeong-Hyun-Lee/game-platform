@@ -51,9 +51,10 @@
   </fragment>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from 'vue'
 import { Sync } from '@egjs/flicking-plugins'
+import type { Plugin } from '@egjs/flicking'
 
 export default Vue.extend({
   name: 'SyncThumbnailList',
@@ -66,7 +67,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      plugins: [],
+      plugins: [] as any,
     }
   },
   mounted() {

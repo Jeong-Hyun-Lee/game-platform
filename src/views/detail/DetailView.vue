@@ -35,7 +35,8 @@
   </fragment>
 </template>
 
-<script>
+<script lang="ts">
+import { IGame } from '@/interfaces'
 import Vue from 'vue'
 import { mapGetters } from 'vuex'
 import SyncThumbnailList from './components/SyncThumbnailList.vue'
@@ -51,7 +52,10 @@ export default Vue.extend({
     }),
     getData() {
       // 값만 비교하려고 == 사용
-      return this.getList.find((item) => item.id == this.$route.params.id) || {}
+      return (
+        this.getList.find((item: IGame) => item.id == this.$route.params.id) ||
+        {}
+      )
     },
   },
 })
