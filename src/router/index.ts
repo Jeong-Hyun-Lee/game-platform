@@ -18,6 +18,13 @@ const routes: Array<RouteConfig> = [
       import(/* webpackChunkName: "detail" */ '../views/detail/DetailView.vue'),
   },
   {
+    path: '/game',
+    name: 'game',
+    props: true,
+    component: () =>
+      import(/* webpackChunkName: "game" */ '../views/GameView.vue'),
+  },
+  {
     path: '/terms',
     name: 'terms',
     component: () =>

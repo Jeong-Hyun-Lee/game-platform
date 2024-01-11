@@ -22,6 +22,12 @@
             useProgress
           />
         </div>
+        <!-- <span slot="viewport" class="flicking-arrow-prev white--text">
+          left
+        </span>
+        <span slot="viewport" class="flicking-arrow-next white--text">
+          right
+        </span> -->
       </flicking>
       <flicking
         ref="subThumbnail"
@@ -51,7 +57,7 @@
 
 <script>
 import Vue from 'vue'
-import { Sync } from '@egjs/flicking-plugins'
+import { AutoPlay, Sync, Arrow } from '@egjs/flicking-plugins'
 import LazyImage from '@/components/LazyImage.vue'
 
 export default Vue.extend({
@@ -73,6 +79,7 @@ export default Vue.extend({
   },
   mounted() {
     this.plugins = [
+      new AutoPlay({ duration: 5000, direction: 'NEXT', stopOnHover: true }),
       new Sync({
         type: 'index',
         synchronizedFlickingOptions: [
@@ -87,6 +94,7 @@ export default Vue.extend({
           },
         ],
       }),
+      // new Arrow(),
     ]
   },
 })
@@ -95,5 +103,17 @@ export default Vue.extend({
 <style>
 .flicking-panel.thumb.active {
   border: 1px solid #fff;
+}
+.flicking-arrow-prev,
+.flicking-arrow-next {
+  display: block;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+}
+.flicking-arrow-next {
+  right: 0;
 }
 </style>

@@ -24,21 +24,33 @@ import { RootState } from './index'
 
 export interface IGameStore {
   list: IGame[]
+  selectGameUrl: string
 }
 
 export const gameStore: Module<IGameStore, RootState> = {
   namespaced: true,
   state: () => ({
     list: [],
+    selectGameUrl: '',
   }),
   mutations: {
     setList(state, list) {
       state.list = list
     },
+    setSelectUrl(state, url) {
+      state.selectGameUrl = url
+    },
+    resetUrl(state) {
+      console.log('reset url')
+      state.selectGameUrl = ''
+    },
   },
   getters: {
     getList(state, getters, rootState) {
       return state.list
+    },
+    getSelectUrl(state, getters, rootState) {
+      return state.selectGameUrl
     },
   },
   actions: {

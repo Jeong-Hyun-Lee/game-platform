@@ -28,6 +28,7 @@
             width="100%"
             height="80px"
             :ripple="true"
+            @click="onClickHandler"
           >
             {{ $t('detail.play') }}
           </v-btn>
@@ -37,10 +38,9 @@
   </fragment>
 </template>
 
-<script lang="ts">
-import { IGame } from '@/interfaces'
+<script>
 import Vue from 'vue'
-import { mapGetters } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 import SyncThumbnailList from './components/SyncThumbnailList.vue'
 
 export default Vue.extend({
@@ -52,12 +52,18 @@ export default Vue.extend({
     ...mapGetters({
       getList: 'gameStore/getList',
     }),
-    getData(): IGame {
+    getData() {
       // 값만 비교하려고 == 사용
-      return (
-        this.getList.find((item: IGame) => item.id == this.$route.params.id) ||
-        {}
-      )
+      return this.getList.find((item) => item.id == this.$route.params.id) || {}
+    },
+  },
+  methods: {
+    ...mapMutations({
+      setUrl: 'gameStore/setSelectUrl',
+    }),
+    onClickHandler() {
+      this.setUrl(this.getData.url)
+      this.$router.push('/game')
     },
   },
 })
