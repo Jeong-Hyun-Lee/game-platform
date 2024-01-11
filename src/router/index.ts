@@ -26,9 +26,19 @@ const routes: Array<RouteConfig> = [
   },
   {
     path: '/terms',
-    name: 'terms',
+    name: 'service-terms',
     component: () =>
-      import(/* webpackChunkName: "terms" */ '../views/terms/TermsView.vue'),
+      import(
+        /* webpackChunkName: "terms" */ '../views/services/ServiceTermsView.vue'
+      ),
+  },
+  {
+    path: '/personalTerms',
+    name: 'personal-terms',
+    component: () =>
+      import(
+        /* webpackChunkName: "personalTerms" */ '../views/services/PersonalTermsView.vue'
+      ),
   },
   {
     path: '/info',

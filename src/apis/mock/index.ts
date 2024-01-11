@@ -1,11 +1,16 @@
 import MockAdapter from 'axios-mock-adapter'
-import { gameList } from './gameData'
 import { AxiosInstance } from 'axios'
+import { gameList } from './gameData'
+import { termsData } from './termsData'
 
 const mockingList = [
   {
     url: '/getGameList',
     data: gameList,
+  },
+  {
+    url: '/getTerms',
+    data: termsData,
   },
 ]
 

@@ -37,16 +37,16 @@ export default Vue.extend({
         },
         {
           name: this.$t('main.service_terms'),
-          path: '/',
+          path: '/terms',
         },
         {
           name: this.$t('main.personal_terms'),
-          path: '/',
+          path: '/personalTerms',
         },
-        {
-          name: this.$t('main.announcement'),
-          path: '/',
-        },
+        // {
+        //   name: this.$t('main.announcement'),
+        //   path: '/',
+        // },
       ],
     }
   },

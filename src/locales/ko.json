@@ -13,11 +13,20 @@
     "play": "게임 실행하기"
   },
   "services": {
+    "agree": "동의함",
     "info": {
       "title": "게임포털 서비스",
       "description": "다양한 게임을 플레이 할 수 있는 서비스입니다.",
       "version": "소프트웨어 버전 : {version}",
       "update_date": "업데이트 일자 : {date}"
+    },
+    "terms": {
+      "title": "게임 포털 서비스 약관 동의",
+      "description": "서비스 이용을 위한 약관 동의가 필요합니다."
+    },
+    "personal_terms": {
+      "title": "게임 포털 서비스 개인정보 수집 동의",
+      "description": "서비스 이용을 위한 개인정보 수집 및 이용 동의가 필요합니다."
     }
   }
 }
