@@ -109,8 +109,10 @@ export default Vue.extend({
 .flicking-arrow-next {
   position: absolute;
   top: 50%;
+  transform: translateY(-50%);
   width: 48px;
   background: #050505;
+  border: 1px solid #fff;
   z-index: 1;
 }
 .flicking-arrow-next {
