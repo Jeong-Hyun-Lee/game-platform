@@ -5,4 +5,5 @@ export interface IGame {
   description?: string
   thumbnail: string
   images?: Array<string>
+  usePromotion?: boolean
 }

@@ -17,6 +17,8 @@
         :imageUrl="item.thumbnail"
         :title="item.title"
         @click.native="onClickHandler(item)"
+        :usePromotion="item.usePromotion"
+        :promotionList="item.images"
       />
     </flicking>
   </v-container>
@@ -24,14 +26,12 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { Flicking } from '@egjs/vue-flicking'
 import Thumbnail from './Thumbnail.vue'
 import { IGame } from '@/interfaces'
 
 export default Vue.extend({
   name: 'ThumbnailList',
   components: {
-    Flicking,
     Thumbnail,
   },
   props: ['list'],

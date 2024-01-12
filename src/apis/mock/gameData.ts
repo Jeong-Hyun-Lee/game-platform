@@ -16,6 +16,7 @@ export const gameList = [
       'https://static.news.zumst.com/images/9/2022/08/30/NISI20220830_0001074166_web_20220830191442.jpg',
       'https://cdn.gameinsight.co.kr/news/photo/202105/22827_57406_2612.jpg',
     ],
+    usePromotion: true,
   },
   {
     id: 2,
