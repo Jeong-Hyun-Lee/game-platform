@@ -127,7 +127,11 @@ export default Vue.extend({
 }
 .on-hover {
   // do something
-  transition: 0.5s ease transform;
+  transition: 0.3s ease transform;
   transform: scale(1.05);
+}
+.v-card:not(.on-hover) {
+  transition: 0.3s ease transform;
+  transform: scale(1);
 }
 </style>
