@@ -41,12 +41,14 @@
 <script>
 import Vue from 'vue'
 import { mapGetters, mapMutations } from 'vuex'
+import { Fragment } from 'vue-fragment'
 import SyncThumbnailList from './components/SyncThumbnailList.vue'
 
 export default Vue.extend({
   name: 'DetailView',
   components: {
     SyncThumbnailList,
+    Fragment,
   },
   computed: {
     ...mapGetters({

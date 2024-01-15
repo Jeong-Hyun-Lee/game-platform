@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify'
 import i18n from '@/locales'
+import { Plugin } from 'vue-fragment'
 
 Vue.config.productionTip = false
 
@@ -14,6 +15,7 @@ import '@egjs/vue-flicking/dist/flicking-inline.css'
 import '@egjs/flicking-plugins/dist/flicking-plugins.css'
 
 Vue.use(Flicking)
+Vue.use(Plugin)
 
 new Vue({
   router,
