@@ -1,5 +1,5 @@
 <template>
-  <frangment>
+  <fragment>
     <flicking
       :options="{
         horizontal: true,
@@ -22,18 +22,20 @@
         :promotionList="item.images"
       />
     </flicking>
-  </frangment>
+  </fragment>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import Thumbnail from './Thumbnail.vue'
 import { IGame } from '@/interfaces'
+import { Fragment } from 'vue-fragment'
 
 export default Vue.extend({
   name: 'ThumbnailList',
   components: {
     Thumbnail,
+    Fragment,
   },
   props: ['list'],
   methods: {

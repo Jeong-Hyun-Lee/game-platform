@@ -34,16 +34,18 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { mapMutations, mapGetters } from 'vuex'
 import ThumbnailList from './components/ThumbnailList.vue'
 import MenuList from './components/MenuList.vue'
 import { getData } from '@/apis/request'
-import { mapMutations, mapGetters } from 'vuex'
+import { Fragment } from 'vue-fragment'
 
 export default Vue.extend({
   name: 'MainView',
   components: {
     ThumbnailList,
     MenuList,
+    Fragment,
   },
   async created() {
     try {

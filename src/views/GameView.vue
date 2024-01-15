@@ -24,8 +24,12 @@ export default Vue.extend({
       resetUrl: 'gameStore/resetUrl',
     }),
   },
+  created() {
+    // TODO: 게임 시작 로그 전달 처리
+    console.log('게임 시작 로그 전달')
+  },
   beforeDestroy() {
-    // TODO: 종료 로그 전달 처리
+    // TODO: 게임 종료 로그 전달 처리
     console.log('게임 종료 로그 전달')
     this.resetUrl()
   },
