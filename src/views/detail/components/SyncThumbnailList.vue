@@ -41,7 +41,9 @@
             class="panel-image black"
             contain
             useProgress
-          />
+          >
+            <div class="loading" :class="durationClass[duration]"></div>
+          </lazy-image>
         </div>
       </flicking>
     </v-sheet>
@@ -69,11 +71,20 @@ export default Vue.extend({
   data() {
     return {
       plugins: [],
+      duration: 10000,
+      durationClass: {
+        5000: 'duration-5000',
+        10000: 'duration-10000',
+        15000: 'duration-15000',
+      },
     }
   },
   mounted() {
     this.plugins = [
-      new AutoPlay({ duration: 5000, direction: 'NEXT', stopOnHover: true }),
+      new AutoPlay({
+        duration: this.duration,
+        direction: 'NEXT',
+      }),
       new Sync({
         type: 'index',
         synchronizedFlickingOptions: [
@@ -93,8 +104,37 @@ export default Vue.extend({
 })
 </script>
 
-<style>
+<style scoped lang="scss">
+.loading {
+  will-change: transform;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  background: rgba(255, 255, 255, 0.4);
+}
 .flicking-panel.thumb.active {
   border: 1px solid #fff;
+  .loading {
+    transform: translateX(0);
+    animation: linear slidein;
+    &.duration-5000 {
+      animation-duration: 5s;
+    }
+    &.duration-10000 {
+      animation-duration: 10s;
+    }
+    &.duration-15000 {
+      animation-duration: 15s;
+    }
+  }
+}
+@keyframes slidein {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }
 </style>

@@ -130,6 +130,9 @@ export default Vue.extend({
   transition: 0.3s ease transform;
   transform: scale(1.05);
 }
+.v-card {
+  will-change: transform;
+}
 .v-card:not(.on-hover) {
   transition: 0.3s ease transform;
   transform: scale(1);
