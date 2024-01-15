@@ -2,7 +2,6 @@
   <v-hover v-slot="{ hover }">
     <v-card
       :class="{ 'mr-5': !isLast, 'on-hover': hover }"
-      class="transition-swing"
       :elevation="5"
       :width="width"
       :height="height"
@@ -115,9 +114,13 @@ export default Vue.extend({
   top: 50%;
   transform: translateY(-50%);
   width: 48px;
-  background: #050505;
+  background: #212121;
   border: 1px solid #fff;
   z-index: 1;
+  cursor: pointer;
+  &:hover {
+    background: #424242;
+  }
 }
 .flicking-arrow-next {
   right: 0;
