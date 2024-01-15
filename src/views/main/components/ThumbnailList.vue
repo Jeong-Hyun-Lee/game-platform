@@ -1,5 +1,5 @@
 <template>
-  <v-container class="thumbnail-list">
+  <frangment>
     <flicking
       :options="{
         horizontal: true,
@@ -10,6 +10,7 @@
         moveType: ['snap', { count: 4 }],
         autoResize: true,
       }"
+      class="parent-flicking"
     >
       <Thumbnail
         v-for="(item, index) in list"
@@ -21,7 +22,7 @@
         :promotionList="item.images"
       />
     </flicking>
-  </v-container>
+  </frangment>
 </template>
 
 <script lang="ts">
@@ -45,10 +46,7 @@ export default Vue.extend({
 })
 </script>
 <style lang="scss">
-.panel .v-image {
-  position: relative;
-  width: 100%;
-  height: 100%;
+.parent-flicking > .flicking-camera {
+  padding: 25px;
 }
 </style>
-@/interfaces
