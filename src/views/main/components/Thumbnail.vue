@@ -12,8 +12,14 @@
         <flicking
           class="flicking-panel nested-wide pa-0"
           :options="{
-            bound: true,
-            moveType: ['strict'],
+            useFractionalSize: true,
+            // 마우스혹은 터치로 스와이프
+            // bound: true,
+            // bounce: '0%',
+            // moveType: 'strict',
+            // nested: true,
+            // 버튼을 통해서 스와이프
+            disableOnInit: true,
           }"
           :plugins="plugins"
         >

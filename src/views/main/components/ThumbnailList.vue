@@ -7,8 +7,8 @@
         align: 'prev',
         bound: true,
         duration: 500,
-        moveType: ['snap', { count: 4 }],
-        autoResize: true,
+        moveType: 'snap',
+        useFractionalSize: true,
       }"
       class="parent-flicking"
     >
