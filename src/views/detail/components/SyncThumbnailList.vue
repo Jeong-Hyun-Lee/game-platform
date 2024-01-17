@@ -110,7 +110,7 @@ export default Vue.extend({
   width: 100%;
   height: 100%;
   transform: translateX(-100%);
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.3);
 }
 .flicking-panel.thumb.active {
   border: 1px solid #fff;

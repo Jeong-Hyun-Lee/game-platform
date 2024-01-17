@@ -24,22 +24,22 @@ const routes: Array<RouteConfig> = [
     component: () =>
       import(/* webpackChunkName: "game" */ '../views/GameView.vue'),
   },
-  {
-    path: '/terms',
-    name: 'service-terms',
-    component: () =>
-      import(
-        /* webpackChunkName: "terms" */ '../views/services/ServiceTermsView.vue'
-      ),
-  },
-  {
-    path: '/personalTerms',
-    name: 'personal-terms',
-    component: () =>
-      import(
-        /* webpackChunkName: "personalTerms" */ '../views/services/PersonalTermsView.vue'
-      ),
-  },
+  // {
+  //   path: '/terms',
+  //   name: 'service-terms',
+  //   component: () =>
+  //     import(
+  //       /* webpackChunkName: "terms" */ '../views/services/ServiceTermsView.vue'
+  //     ),
+  // },
+  // {
+  //   path: '/personalTerms',
+  //   name: 'personal-terms',
+  //   component: () =>
+  //     import(
+  //       /* webpackChunkName: "personalTerms" */ '../views/services/PersonalTermsView.vue'
+  //     ),
+  // },
   {
     path: '/info',
     name: 'service-info',
