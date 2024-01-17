@@ -35,6 +35,10 @@ export default Vue.extend({
           name: this.$t('main.service_info'),
           path: '/info',
         },
+        {
+          name: this.$t('main.service_unsubscribe'),
+          path: '/unsubscribe',
+        },
         // {
         //   name: this.$t('main.service_terms'),
         //   path: '/terms',

@@ -48,6 +48,14 @@ const routes: Array<RouteConfig> = [
         /* webpackChunkName: "serviceInfo" */ '../views/services/ServiceInfoView.vue'
       ),
   },
+  {
+    path: '/unsubscribe',
+    name: 'service-unsubscribe',
+    component: () =>
+      import(
+        /* webpackChunkName: "serviceUnsubscribe" */ '../views/services/ServiceUnsubscribeView.vue'
+      ),
+  },
 ]
 
 const router = new VueRouter({
