@@ -3,7 +3,7 @@
     "confirm": "확인"
   },
   "main": {
-    "header": "게임 포털",
+    "header": "캐주얼 게임",
     "service_info": "서비스 정보",
     "service_terms": "서비스 약관",
     "personal_terms": "개인정보 수집 약관",
@@ -15,10 +15,11 @@
   "services": {
     "agree": "동의함",
     "info": {
-      "title": "게임포털 서비스",
+      "title": "캐주얼 게임 서비스",
       "description": "다양한 게임을 플레이 할 수 있는 서비스입니다.",
       "version": "소프트웨어 버전 : {version}",
-      "update_date": "업데이트 일자 : {date}"
+      "update_date": "업데이트 일자 : {date}",
+      "affiliate": "제휴 게임사 : {company}"
     },
     "terms": {
       "title": "게임 포털 서비스 약관 동의",

@@ -8,6 +8,7 @@
       <p>{{ $t('services.info.description') }}</p>
       <p>{{ $t('services.info.version', { version }) }}</p>
       <p>{{ $t('services.info.update_date', { date }) }}</p>
+      <p>{{ $t('services.info.affiliate', { company: getCompany }) }}</p>
     </div>
     <v-btn
       class="light-blue darken-4 rounded-xl confirm-btn"
@@ -30,7 +31,13 @@ export default Vue.extend({
     return {
       version: '1.0.1',
       date: '2024-01-11',
+      companyList: ['Blizzard', 'smilegate', 'Ubisoft', 'Rockstar Games'],
     }
+  },
+  computed: {
+    getCompany() {
+      return this.companyList.join(', ')
+    },
   },
   methods: {
     onClickHandler() {
