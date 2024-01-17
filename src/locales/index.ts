@@ -21,7 +21,7 @@ function loadLocaleMessages() {
 }
 
 const i18n = new VueI18n({
-  locale: 'ko', // set locale
+  locale: navigator.language, // set locale
   fallbackLocale: 'ko',
   messages: loadLocaleMessages(),
   silentTranslationWarn: true,
